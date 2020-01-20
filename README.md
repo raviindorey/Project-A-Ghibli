@@ -17,3 +17,16 @@
   Don’t forget to test your code. Your tests don’t have to be complete, but you should describe
   how you would extend them if you had the time.If you have to skip some important work due to time limitations, feel free to add a short
   description of what you would improve and how if you had the time for it.
+
+## Setup
+
+- `SECRET_KEY` is needed to be setup in your environment.
+- You will be required to run migrations. Creating a superuser is optional.
+  - `$ python manage.py migrate`
+  - `$ python manage.py createsuperuser`
+
+## Run
+
+- `python manage.py runserver` to project run at [`http://localhost:8000/`](http://localhost:8000/)
+- Movies list is located at [`http://localhost:8000/movies/`](http://localhost:8000/movies/)
+- Use admin panel to see memcached status [`http://localhost:8000/admin/`](http://localhost:8000/admin/)
