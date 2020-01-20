@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'movies.apps.MoviesConfig',
+    'memcache_status',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,11 @@ STATIC_URL = '/static/'
 
 FILMS_ENDPOINT = 'https://ghibliapi.herokuapp.com/films/'
 PEOPLE_ENDPOINT = 'https://ghibliapi.herokuapp.com/people/'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+        'TIMEOUT': 60,
+    }
+}

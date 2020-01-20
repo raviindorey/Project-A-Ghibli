@@ -1,3 +1,2 @@
 from django.contrib import admin
-
-# Register your models here.
+admin.site.index_template = 'memcache_status/admin_index.html'
