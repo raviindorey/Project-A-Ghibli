@@ -27,6 +27,6 @@
 
 ## Run
 
-- `python manage.py runserver` to project run at [`http://localhost:8000/`](http://localhost:8000/)
+- `$ python manage.py runserver` to project run at [`http://localhost:8000/`](http://localhost:8000/)
 - Movies list is located at [`http://localhost:8000/movies/`](http://localhost:8000/movies/)
 - Use admin panel to see memcached status [`http://localhost:8000/admin/`](http://localhost:8000/admin/)
