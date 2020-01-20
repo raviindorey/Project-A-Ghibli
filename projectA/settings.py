@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'vc=&8vnl16n51y^1jesbqw1gw7#)g@1s^+)0y8$*$m67(rrn22'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -119,3 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#
+
+FILMS_ENDPOINT = 'https://ghibliapi.herokuapp.com/films/'
+PEOPLE_ENDPOINT = 'https://ghibliapi.herokuapp.com/people/'

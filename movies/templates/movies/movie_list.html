@@ -8,6 +8,37 @@
   <title>Movies</title>
 </head>
 <body>
-  <h1>Hello from Movie List</h1>
+  <h1>Movie List</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Release Date</th>
+        <th>Description</th>
+        <th>RT Score</th>
+        <th>Director</th>
+        <th>Producer</th>
+        <th>Starring</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for movie in movies %}
+      <tr>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.release_date }}</td>
+        <td>{{ movie.description }}</td>
+        <td>{{ movie.rt_score }}</td>
+        <td>{{ movie.director }}</td>
+        <td>{{ movie.producer }}</td>
+        <td>
+          <ul>
+          {% for star in movie.people %}
+          <li><a href={{ star.url }}>{{ star.name }}</a></li>
+          {% endfor %}
+          </ul>
+        </td>
+      </tr>
+      {% endfor %}
+  </table>
 </body>
 </html>
