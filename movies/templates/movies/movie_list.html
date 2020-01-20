@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Movies</title>
+</head>
+<body>
+  <h1>Movie List</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Release Date</th>
+        <th>Description</th>
+        <th>RT Score</th>
+        <th>Director</th>
+        <th>Producer</th>
+        <th>Starring</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for movie in movies %}
+      <tr>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.release_date }}</td>
+        <td>{{ movie.description }}</td>
+        <td>{{ movie.rt_score }}</td>
+        <td>{{ movie.director }}</td>
+        <td>{{ movie.producer }}</td>
+        <td>
+          <ul>
+          {% for star in movie.people %}
+          <li><a href={{ star.url }}>{{ star.name }}</a></li>
+          {% endfor %}
+          </ul>
+        </td>
+      </tr>
+      {% endfor %}
+  </table>
+</body>
+</html>
